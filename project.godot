@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="A Day in Akropolis: The Great Search"
 run/main_scene="res://main_menu.tscn"
 
+[display]
+
+window/stretch/aspect="keep_height"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
