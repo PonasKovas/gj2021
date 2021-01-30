@@ -17,6 +17,9 @@ var starting_in = 3.0
 
 const NUMBER_OF_iTEMS = 100
 
+var timeout = false
+var listen_for_key = false
+
 func _ready():
 	# spawn random items throughout the supermarket
 	# calculate how many items should be spawned in each individual segment (all_items*segment_area/all_area)
@@ -78,10 +81,30 @@ func _process(delta):
 	if starting_in > 0.0:
 		starting_in -= delta
 		get_node("/root/Node2D/CanvasLayer/countdown").text = str(round(abs(starting_in)))
+	elif timeout:
+		if not listen_for_key:
+			get_node("/root/Node2D/CanvasLayer/timeout").color.a = float(i)/255
+			if i > 255:
+				get_node("/root/Node2D/CanvasLayer/timeout/Label2").set_visible(true)
+				listen_for_key = true
+			i+=1
+		else:
+			if Input.is_key_pressed(16777221):
+				get_tree().change_scene("res://main_menu.tscn")
 	else:
 		get_node("/root/Node2D/CanvasLayer/countdown").set_visible(false)
 		time_left -= delta
 		get_node("/root/Node2D/CanvasLayer/status").text = "COLLECTED: " + str(collected) + "\nTIME LEFT: " + ("%.1f" % time_left) + "s\nHOLDING: " + str(in_hand) + "/3"
+		if time_left <= 0:
+			get_node("/root/Node2D/CanvasLayer/status").text = "COLLECTED: " + str(collected) + "\nTIME LEFT: 0.0s\nHOLDING: " + str(in_hand) + "/3"
+			timeout = true
+			var scene = preload("res://timeout.tscn")
+			var scene_instance = scene.instance()
+			scene_instance.color.a = 0
+			scene_instance.set_name("timeout")
+			get_node("/root/Node2D/CanvasLayer").add_child(scene_instance)
+			i = 0
+			return
 		
 		# check if any item is near enough to be picked up
 		for item in get_node("/root/Node2D/items").get_children():

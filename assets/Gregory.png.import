@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/karen_0.png-e629007b4e3bea46414503f62dca506d.stex"
+path="res://.import/Gregory.png-6cbca3ce439a7b44aefc950b79de129c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/customers/karen_0.png"
-dest_files=[ "res://.import/karen_0.png-e629007b4e3bea46414503f62dca506d.stex" ]
+source_file="res://assets/Gregory.png"
+dest_files=[ "res://.import/Gregory.png-6cbca3ce439a7b44aefc950b79de129c.stex" ]
 
 [params]
 

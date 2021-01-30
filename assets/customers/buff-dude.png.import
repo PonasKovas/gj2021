@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/karen_2.png-aeb80650dec95c983f65e644339c7c45.stex"
+path="res://.import/buff-dude.png-8d9dec19b3b1d539b99a744cc6017cde.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/customers/karen_2.png"
-dest_files=[ "res://.import/karen_2.png-aeb80650dec95c983f65e644339c7c45.stex" ]
+source_file="res://assets/customers/buff-dude.png"
+dest_files=[ "res://.import/buff-dude.png-8d9dec19b3b1d539b99a744cc6017cde.stex" ]
 
 [params]
 

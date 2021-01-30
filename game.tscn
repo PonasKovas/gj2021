@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://assets/floor_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/player.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/infocenter.png" type="Texture" id=4]
 [ext_resource path="res://scripts/outline.shader" type="Shader" id=5]
 [ext_resource path="res://assets/8bitOperatorPlus-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/Gregory.png" type="Texture" id=7]
 [ext_resource path="res://assets/stuff/atm.png" type="Texture" id=9]
 [ext_resource path="res://assets/stuff/l&fb.png" type="Texture" id=10]
 [ext_resource path="res://assets/stuff/bench.png" type="Texture" id=11]
@@ -63,6 +64,9 @@ shader_param/pixel_size = 4
 
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 13.8395, 5.5108 )
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 5.09399, 3.60399 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 4 )
@@ -228,7 +232,7 @@ shape = SubResource( 13 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="player" type="KinematicBody2D" parent="YSort"]
-position = Vector2( 232.777, -63.1252 )
+position = Vector2( 248, -16 )
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -265,6 +269,22 @@ visible = false
 position = Vector2( 0.378014, 7.21851 )
 shape = SubResource( 15 )
 
+[node name="gregory" type="StaticBody2D" parent="YSort"]
+position = Vector2( 201.412, -14.5523 )
+scale = Vector2( 1.5, 1.5 )
+collision_mask = 2147483649
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="YSort/gregory"]
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/gregory"]
+visible = false
+position = Vector2( -0.0742107, 4.44244 )
+shape = SubResource( 38 )
+
 [node name="infocenter" type="StaticBody2D" parent="YSort"]
 position = Vector2( 231.301, -30.528 )
 __meta__ = {
@@ -273,7 +293,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter"]
 frames = SubResource( 20 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter"]
@@ -289,7 +309,6 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter2"]
 frames = SubResource( 20 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter2"]
@@ -305,6 +324,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter3"]
 frames = SubResource( 20 )
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter3"]
@@ -320,6 +340,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter4"]
 frames = SubResource( 20 )
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter4"]
@@ -1256,7 +1277,7 @@ margin_top = -32.0
 margin_right = 22.0
 margin_bottom = 25.0
 custom_fonts/font = SubResource( 26 )
-text = "3!"
+text = "3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
