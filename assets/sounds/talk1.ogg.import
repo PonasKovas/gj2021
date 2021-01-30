@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/talk1.ogg-b5b7a7a0f88ace333edfaad8e2aa8231.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/talk1.ogg"
+dest_files=[ "res://.import/talk1.ogg-b5b7a7a0f88ace333edfaad8e2aa8231.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

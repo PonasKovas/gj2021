@@ -16,6 +16,7 @@ var in_hand_textures = [preload("res://assets/items/book.png"), preload("res://a
 var starting_in = 3.0
 
 const NUMBER_OF_iTEMS = 100
+const NUMBER_OF_CUSTOMERS = 20
 
 var timeout = false
 var listen_for_key = false
@@ -75,7 +76,50 @@ func _ready():
 				][randi()%13]
 			get_node("/root/Node2D/items").call_deferred("add_child", scene_instance)
 			i+=1
-	
+		
+		# customers and karens too
+		to_spawn = NUMBER_OF_CUSTOMERS * spawnable.shape.extents.x*spawnable.shape.extents.y / all_area
+		i = 0
+		while i < to_spawn:
+			seed(rseed)
+			rseed +=1
+			var x = (randi() % int(2*spawnable.shape.extents.x - 20)) + spawnable.position.x - spawnable.shape.extents.x + 10
+			seed(rseed)
+			rseed +=1
+			var y = (randi() % int(2*spawnable.shape.extents.y - 20)) + spawnable.position.y - spawnable.shape.extents.y + 10
+			var position = Vector2(x, y)
+			
+			# todo: make sure no items or customers or otherstuff are too close
+			var restart = false
+			for item in get_node("/root/Node2D/items").get_children():
+				if item.position.distance_to(position) <= 40:
+					restart = true
+					break
+			for item in get_node("/root/Node2D/YSort").get_children():
+				if item.position.distance_to(position) <= 40:
+					restart = true
+					break
+			
+			if restart:
+				continue
+			
+			var scene = preload("res://customer.tscn")
+			var scene_instance = scene.instance()
+			scene_instance.position = position
+			scene_instance.scale = Vector2(1.5, 1.5)
+			seed(rseed)
+			rseed +=1
+			scene_instance.texture = [
+				preload("res://assets/customers/bluehood.png"),
+				preload("res://assets/customers/buff-dude.png"),
+				preload("res://assets/customers/green-boi.png"),
+				][randi()%3]
+			scene_instance.get_node("talk").stream = [
+				preload("res://assets/sounds/talk1.ogg"),
+				preload("res://assets/sounds/talk2.ogg")
+				][randi()%2]
+			get_node("/root/Node2D/YSort").call_deferred("add_child", scene_instance)
+			i+=1
 
 func _process(delta):
 	if starting_in > 0.0:

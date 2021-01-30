@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://assets/floor_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/player.png" type="Texture" id=2]
@@ -7,11 +7,14 @@
 [ext_resource path="res://scripts/outline.shader" type="Shader" id=5]
 [ext_resource path="res://assets/8bitOperatorPlus-Bold.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/Gregory.png" type="Texture" id=7]
+[ext_resource path="res://scripts/gregory.gd" type="Script" id=8]
 [ext_resource path="res://assets/stuff/atm.png" type="Texture" id=9]
 [ext_resource path="res://assets/stuff/l&fb.png" type="Texture" id=10]
 [ext_resource path="res://assets/stuff/bench.png" type="Texture" id=11]
 [ext_resource path="res://assets/stuff/bench2.png" type="Texture" id=12]
 [ext_resource path="res://assets/stuff/plant.png" type="Texture" id=13]
+[ext_resource path="res://assets/sounds/talk0.ogg" type="AudioStream" id=14]
+[ext_resource path="res://karen.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 88, 864 )
@@ -112,10 +115,11 @@ use_mipmaps = true
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=26]
-size = 40
-outline_size = 1
+size = 70
+outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 6 )
 
 [sub_resource type="RectangleShape2D" id=27]
@@ -273,6 +277,7 @@ shape = SubResource( 15 )
 position = Vector2( 201.412, -14.5523 )
 scale = Vector2( 1.5, 1.5 )
 collision_mask = 2147483649
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -285,6 +290,9 @@ visible = false
 position = Vector2( -0.0742107, 4.44244 )
 shape = SubResource( 38 )
 
+[node name="talk" type="AudioStreamPlayer2D" parent="YSort/gregory"]
+stream = ExtResource( 14 )
+
 [node name="infocenter" type="StaticBody2D" parent="YSort"]
 position = Vector2( 231.301, -30.528 )
 __meta__ = {
@@ -293,7 +301,6 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter"]
 frames = SubResource( 20 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter"]
@@ -309,6 +316,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter2"]
 frames = SubResource( 20 )
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter2"]
@@ -324,7 +332,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter3"]
 frames = SubResource( 20 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter3"]
@@ -340,7 +348,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter4"]
 frames = SubResource( 20 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter4"]
@@ -1248,6 +1256,15 @@ shape = SubResource( 24 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="penalty" type="ColorRect" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.439216, 0, 0, 0.666667 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 margin_right = 403.0
 margin_bottom = 189.0
@@ -1272,10 +1289,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -18.0
-margin_top = -32.0
-margin_right = 22.0
-margin_bottom = 25.0
+margin_left = -24.6072
+margin_top = -50.8774
+margin_right = 23.3928
+margin_bottom = 47.1226
 custom_fonts/font = SubResource( 26 )
 text = "3"
 __meta__ = {
@@ -1334,3 +1351,8 @@ disabled = true
 position = Vector2( 1856, 960 )
 shape = SubResource( 36 )
 disabled = true
+
+[node name="customers" type="Node2D" parent="."]
+
+[node name="Sprite" parent="." instance=ExtResource( 15 )]
+position = Vector2( 453.327, 97.8795 )
