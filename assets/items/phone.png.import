@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/karen.png-9f62bb331782a73816ea4ba638e138ab.stex"
+path="res://.import/phone.png-a9a6c36e5d6e404150ec900727043301.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/customers/karen.png"
-dest_files=[ "res://.import/karen.png-9f62bb331782a73816ea4ba638e138ab.stex" ]
+source_file="res://assets/items/phone.png"
+dest_files=[ "res://.import/phone.png-a9a6c36e5d6e404150ec900727043301.stex" ]
 
 [params]
 
