@@ -17,9 +17,12 @@ var starting_in = 3.0
 
 const NUMBER_OF_iTEMS = 100
 const NUMBER_OF_CUSTOMERS = 20
+const NUMBER_OF_KARENS = 3
 
 var timeout = false
 var listen_for_key = false
+
+var time_since_bonus = 10
 
 func _ready():
 	# spawn random items throughout the supermarket
@@ -77,7 +80,7 @@ func _ready():
 			get_node("/root/Node2D/items").call_deferred("add_child", scene_instance)
 			i+=1
 		
-		# customers and karens too
+		# customers
 		to_spawn = NUMBER_OF_CUSTOMERS * spawnable.shape.extents.x*spawnable.shape.extents.y / all_area
 		i = 0
 		while i < to_spawn:
@@ -120,6 +123,28 @@ func _ready():
 				][randi()%2]
 			get_node("/root/Node2D/YSort").call_deferred("add_child", scene_instance)
 			i+=1
+	
+	
+	# spawn karens
+	spawnables = get_node("/root/Node2D/karen_zones").get_children()
+	
+	# spawn karens in each zone
+	for spawnable in spawnables:
+		seed(rseed)
+		rseed +=1
+		var x = (randi() % int(2*spawnable.shape.extents.x - 20)) + spawnable.position.x - spawnable.shape.extents.x + 10
+		seed(rseed)
+		rseed +=1
+		var y = (randi() % int(2*spawnable.shape.extents.y - 20)) + spawnable.position.y - spawnable.shape.extents.y + 10
+		var position = Vector2(x, y)
+		
+		var scene = preload("res://karen.tscn")
+		var scene_instance = scene.instance()
+		scene_instance.position = position
+		scene_instance.scale = Vector2(1.5, 1.5)
+		seed(rseed)
+		rseed +=1
+		get_node("/root/Node2D/YSort").call_deferred("add_child", scene_instance)
 
 func _process(delta):
 	if starting_in > 0.0:
@@ -164,6 +189,24 @@ func _process(delta):
 		else:
 			get_node("/root/Node2D/YSort/box/Sprite").material.set_shader_param("width", 0)
 		
+		# if pressing space - throw item
+		if Input.is_action_just_pressed("space"):
+			if in_hand > 0:
+				in_hand -= 1
+				var direction = (get_global_mouse_position() - position).normalized()
+				# instantiate a thrown item object
+				var scene = load("res://thrown_item.tscn")
+				var scene_instance = scene.instance()
+				scene_instance.texture = in_hand_textures[in_hand]
+				scene_instance.direction = direction
+				scene_instance.position = position
+				get_node("/root/Node2D/in_air").add_child(scene_instance)
+				
+				var node = AudioStreamPlayer.new()
+				node.stream = preload("res://assets/sounds/throw.wav")
+				add_child(node)
+				node.play()
+		
 		var movement = Vector2(0,0)
 		if Input.is_action_pressed("ui_down"):
 			movement.y += 1
@@ -183,8 +226,12 @@ func _process(delta):
 			var collision = get_slide_collision(i)
 			if collision.collider == get_node("/root/Node2D/YSort/box"):
 				# yep, leave items
-				collected += in_hand
-				in_hand = 0
+				if in_hand > 0:
+					collected += in_hand
+					time_left += in_hand*5
+					get_node("/root/Node2D/CanvasLayer/status/bonus_text").text = "+"+str(in_hand*5)
+					time_since_bonus = 0
+					in_hand = 0
 		
 		if movement.length() <= 0.01:
 			$Sprite.texture = STANDING_TEX
@@ -194,4 +241,7 @@ func _process(delta):
 			else:
 				$Sprite.texture = RUNNING2_TEX
 		
+		get_node("/root/Node2D/CanvasLayer/status/bonus_text").modulate.a = max(0, 1.0 - time_since_bonus/1.5)
+		
 		i+=1
+		time_since_bonus += delta

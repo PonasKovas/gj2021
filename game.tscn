@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://assets/floor_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/player.png" type="Texture" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://assets/stuff/bench2.png" type="Texture" id=12]
 [ext_resource path="res://assets/stuff/plant.png" type="Texture" id=13]
 [ext_resource path="res://assets/sounds/talk0.ogg" type="AudioStream" id=14]
-[ext_resource path="res://karen.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 88, 864 )
@@ -58,63 +57,77 @@ extents = Vector2( 88, 152 )
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 5.02808, 3.48467 )
 
-[sub_resource type="ShaderMaterial" id=37]
+[sub_resource type="ShaderMaterial" id=15]
 shader = ExtResource( 5 )
 shader_param/Smooth = true
 shader_param/width = 0.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/pixel_size = 4
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 13.8395, 5.5108 )
 
-[sub_resource type="RectangleShape2D" id=38]
+[sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 5.09399, 3.60399 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 48, 32 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 4 )
-region = Rect2( 48, 0, 48, 32 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 4 )
-region = Rect2( 0, 32, 48, 32 )
+region = Rect2( 0, 0, 48, 32 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 4 )
+region = Rect2( 48, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 32, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 4 )
 region = Rect2( 48, 32, 48, 32 )
 
-[sub_resource type="SpriteFrames" id=20]
+[sub_resource type="SpriteFrames" id=22]
 animations = [ {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 23.9419, 8.30605 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 7.9126, 5.8505 )
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 15.2533, 7.867 )
 
-[sub_resource type="RectangleShape2D" id=24]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 14.6613, 12.2996 )
 
-[sub_resource type="DynamicFont" id=25]
+[sub_resource type="DynamicFont" id=27]
 size = 40
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=26]
+[sub_resource type="DynamicFont" id=40]
+size = 33
+outline_size = 2
+outline_color = Color( 1, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=39]
+size = 33
+outline_size = 2
+outline_color = Color( 0, 1, 0.133333, 1 )
+use_mipmaps = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=28]
 size = 70
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
@@ -122,35 +135,47 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 6 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 61.5456, 80 )
 
-[sub_resource type="RectangleShape2D" id=28]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 56, 80 )
 
-[sub_resource type="RectangleShape2D" id=29]
+[sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 1088, 48 )
 
-[sub_resource type="RectangleShape2D" id=30]
+[sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 1040, 48 )
 
-[sub_resource type="RectangleShape2D" id=31]
+[sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 48, 480 )
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 56, 288 )
 
-[sub_resource type="RectangleShape2D" id=33]
+[sub_resource type="RectangleShape2D" id=35]
 extents = Vector2( 32, 288 )
 
-[sub_resource type="RectangleShape2D" id=34]
+[sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 48, 288 )
 
-[sub_resource type="RectangleShape2D" id=35]
+[sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 32, 104 )
 
-[sub_resource type="RectangleShape2D" id=36]
+[sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 64, 160 )
+
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 40.2412, 42.937 )
+
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 40.2412, 39.5992 )
+
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 40.2412, 110.175 )
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 40.2412, 368.11 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -265,13 +290,13 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="YSort/box"]
-material = SubResource( 37 )
+material = SubResource( 15 )
 texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/box"]
 visible = false
 position = Vector2( 0.378014, 7.21851 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="gregory" type="StaticBody2D" parent="YSort"]
 position = Vector2( 201.412, -14.5523 )
@@ -288,7 +313,7 @@ texture = ExtResource( 7 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/gregory"]
 visible = false
 position = Vector2( -0.0742107, 4.44244 )
-shape = SubResource( 38 )
+shape = SubResource( 17 )
 
 [node name="talk" type="AudioStreamPlayer2D" parent="YSort/gregory"]
 stream = ExtResource( 14 )
@@ -300,13 +325,14 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter"]
-frames = SubResource( 20 )
+frames = SubResource( 22 )
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter"]
 visible = false
 position = Vector2( 0.187286, 8.0496 )
-shape = SubResource( 21 )
+shape = SubResource( 23 )
 
 [node name="infocenter2" type="StaticBody2D" parent="YSort"]
 position = Vector2( 695.055, -33.0507 )
@@ -315,14 +341,14 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter2"]
-frames = SubResource( 20 )
-frame = 3
+frames = SubResource( 22 )
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter2"]
 visible = false
 position = Vector2( 0.187286, 8.0496 )
-shape = SubResource( 21 )
+shape = SubResource( 23 )
 
 [node name="infocenter3" type="StaticBody2D" parent="YSort"]
 position = Vector2( 144.776, 946.549 )
@@ -331,14 +357,14 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter3"]
-frames = SubResource( 20 )
-frame = 2
+frames = SubResource( 22 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter3"]
 visible = false
 position = Vector2( 0.187286, 8.0496 )
-shape = SubResource( 21 )
+shape = SubResource( 23 )
 
 [node name="infocenter4" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1852.04, 973.246 )
@@ -347,14 +373,14 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter4"]
-frames = SubResource( 20 )
-frame = 2
+frames = SubResource( 22 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter4"]
 visible = false
 position = Vector2( 0.187286, 8.0496 )
-shape = SubResource( 21 )
+shape = SubResource( 23 )
 
 [node name="bench" type="StaticBody2D" parent="YSort"]
 position = Vector2( 701.021, 78.5585 )
@@ -368,7 +394,7 @@ texture = ExtResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bench"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="bench2" type="StaticBody2D" parent="YSort"]
 position = Vector2( 228.845, 73.2131 )
@@ -382,7 +408,7 @@ texture = ExtResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bench2"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="bench3" type="StaticBody2D" parent="YSort"]
 position = Vector2( 142.427, 755.078 )
@@ -396,7 +422,7 @@ texture = ExtResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bench3"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="bench4" type="StaticBody2D" parent="YSort"]
 position = Vector2( 701.912, 762.206 )
@@ -410,7 +436,7 @@ texture = ExtResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bench4"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="bench5" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1240.91, 755.969 )
@@ -424,7 +450,7 @@ texture = ExtResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bench5"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="bench6" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1852.95, 764.878 )
@@ -438,7 +464,7 @@ texture = ExtResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bench6"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="bigbench" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1738.99, 753.105 )
@@ -452,7 +478,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="bigbench2" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1590.95, 753.42 )
@@ -466,7 +492,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench2"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="bigbench3" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1404.16, 753.42 )
@@ -480,7 +506,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench3"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="bigbench4" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1122.89, 754.995 )
@@ -494,7 +520,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench4"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="bigbench5" type="StaticBody2D" parent="YSort"]
 position = Vector2( 926.969, 754.365 )
@@ -508,7 +534,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench5"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="bigbench6" type="StaticBody2D" parent="YSort"]
 position = Vector2( 530.094, 759.089 )
@@ -522,7 +548,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench6"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="bigbench7" type="StaticBody2D" parent="YSort"]
 position = Vector2( 302.993, 756.884 )
@@ -536,7 +562,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench7"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="bigbench8" type="StaticBody2D" parent="YSort"]
 position = Vector2( 353.705, 80.3068 )
@@ -550,7 +576,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench8"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="bigbench9" type="StaticBody2D" parent="YSort"]
 position = Vector2( 848.138, 77.7613 )
@@ -564,7 +590,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench9"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="bigbench10" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1033.95, 77.464 )
@@ -578,7 +604,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench10"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="bigbench11" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1356.52, 76.5721 )
@@ -592,7 +618,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench11"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="bigbench12" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1596.74, 75.6802 )
@@ -606,7 +632,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench12"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="bigbench13" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1865.51, 77.464 )
@@ -620,7 +646,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench13"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="bigbench14" type="StaticBody2D" parent="YSort"]
 position = Vector2( 2122.08, 75.9774 )
@@ -634,7 +660,7 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/bigbench14"]
 visible = false
 position = Vector2( -0.0112, 0.995338 )
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="plant" type="StaticBody2D" parent="YSort"]
 position = Vector2( 249.953, 71.4292 )
@@ -648,7 +674,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant2" type="StaticBody2D" parent="YSort"]
 position = Vector2( 361.441, 120.187 )
@@ -662,7 +688,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant2"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant3" type="StaticBody2D" parent="YSort"]
 position = Vector2( 623.364, 30.1043 )
@@ -676,7 +702,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant3"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant4" type="StaticBody2D" parent="YSort"]
 position = Vector2( 646.936, -127.321 )
@@ -690,7 +716,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant4"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant5" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1072.63, 32.3492 )
@@ -704,7 +730,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant5"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant6" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1329.11, 29.2624 )
@@ -718,7 +744,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant6"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant7" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1286.74, 119.901 )
@@ -732,7 +758,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant7"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant8" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1775.57, 30.3849 )
@@ -746,7 +772,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant8"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant9" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1996.7, 120.182 )
@@ -760,7 +786,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant9"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant10" type="StaticBody2D" parent="YSort"]
 position = Vector2( 2265.25, 71.916 )
@@ -774,7 +800,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant10"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant11" type="StaticBody2D" parent="YSort"]
 position = Vector2( 2181.62, 376.384 )
@@ -788,7 +814,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant11"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant12" type="StaticBody2D" parent="YSort"]
 position = Vector2( 2265.25, 581.794 )
@@ -802,7 +828,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant12"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant13" type="StaticBody2D" parent="YSort"]
 position = Vector2( 2178.26, 701.617 )
@@ -816,7 +842,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant13"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant14" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1920.65, 701.898 )
@@ -830,7 +856,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant14"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant15" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1869.02, 766.439 )
@@ -844,7 +870,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant15"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant16" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1912.79, 920.217 )
@@ -858,7 +884,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant16"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant17" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1799.64, 1111.16 )
@@ -872,7 +898,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant17"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant18" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1603.37, 792.53 )
@@ -886,7 +912,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant18"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant19" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1407.9, 701.152 )
@@ -900,7 +926,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant19"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant20" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1225.14, 755.184 )
@@ -914,7 +940,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant20"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant21" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1273.35, 999.92 )
@@ -928,7 +954,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant21"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant22" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1222.49, 999.92 )
@@ -942,7 +968,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant22"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant23" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1008.75, 701.152 )
@@ -956,7 +982,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant23"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant24" type="StaticBody2D" parent="YSort"]
 position = Vector2( 827.845, 792 )
@@ -970,7 +996,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant24"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant25" type="StaticBody2D" parent="YSort"]
 position = Vector2( 717.131, 762.071 )
@@ -984,7 +1010,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant25"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant26" type="StaticBody2D" parent="YSort"]
 position = Vector2( 686.937, 761.806 )
@@ -998,7 +1024,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant26"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant27" type="StaticBody2D" parent="YSort"]
 position = Vector2( 744.942, 495.881 )
@@ -1012,7 +1038,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant27"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant28" type="StaticBody2D" parent="YSort"]
 position = Vector2( 645.617, 296.437 )
@@ -1026,7 +1052,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant28"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant29" type="StaticBody2D" parent="YSort"]
 position = Vector2( 447.617, 699.437 )
@@ -1040,7 +1066,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant29"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant30" type="StaticBody2D" parent="YSort"]
 position = Vector2( 157.35, 752.823 )
@@ -1054,7 +1080,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant30"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant31" type="StaticBody2D" parent="YSort"]
 position = Vector2( 102.196, 644.636 )
@@ -1068,7 +1094,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant31"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant32" type="StaticBody2D" parent="YSort"]
 position = Vector2( 185.634, 487.305 )
@@ -1082,7 +1108,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant32"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant33" type="StaticBody2D" parent="YSort"]
 position = Vector2( 184.574, 316.185 )
@@ -1096,7 +1122,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant33"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant34" type="StaticBody2D" parent="YSort"]
 position = Vector2( 102.196, 139.055 )
@@ -1110,7 +1136,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant34"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="plant35" type="StaticBody2D" parent="YSort"]
 position = Vector2( 102.178, 1078.96 )
@@ -1124,7 +1150,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/plant35"]
 visible = false
 position = Vector2( -0.0112, 2.49369 )
-shape = SubResource( 22 )
+shape = SubResource( 24 )
 
 [node name="atm" type="StaticBody2D" parent="YSort"]
 position = Vector2( 103.81, 44.7749 )
@@ -1140,7 +1166,7 @@ texture = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/atm"]
 visible = false
 position = Vector2( -0.122566, 0.0437393 )
-shape = SubResource( 24 )
+shape = SubResource( 26 )
 
 [node name="atm2" type="StaticBody2D" parent="YSort"]
 position = Vector2( 704.245, -134.601 )
@@ -1156,7 +1182,7 @@ texture = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/atm2"]
 visible = false
 position = Vector2( -0.122566, 0.0437393 )
-shape = SubResource( 24 )
+shape = SubResource( 26 )
 
 [node name="atm3" type="StaticBody2D" parent="YSort"]
 position = Vector2( 944.736, 26.5198 )
@@ -1172,7 +1198,7 @@ texture = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/atm3"]
 visible = false
 position = Vector2( -0.122566, 0.0437393 )
-shape = SubResource( 24 )
+shape = SubResource( 26 )
 
 [node name="atm4" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1520.96, 28.1072 )
@@ -1188,7 +1214,7 @@ texture = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/atm4"]
 visible = false
 position = Vector2( -0.122566, 0.0437393 )
-shape = SubResource( 24 )
+shape = SubResource( 26 )
 
 [node name="atm5" type="StaticBody2D" parent="YSort"]
 position = Vector2( 2096, 26.9166 )
@@ -1204,7 +1230,7 @@ texture = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/atm5"]
 visible = false
 position = Vector2( -0.122566, 0.0437393 )
-shape = SubResource( 24 )
+shape = SubResource( 26 )
 
 [node name="atm6" type="StaticBody2D" parent="YSort"]
 position = Vector2( 2048.77, 700.372 )
@@ -1220,7 +1246,7 @@ texture = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/atm6"]
 visible = false
 position = Vector2( -0.122566, 0.0437393 )
-shape = SubResource( 24 )
+shape = SubResource( 26 )
 
 [node name="atm7" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1536.84, 698.387 )
@@ -1236,7 +1262,7 @@ texture = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/atm7"]
 visible = false
 position = Vector2( -0.122566, 0.0437393 )
-shape = SubResource( 24 )
+shape = SubResource( 26 )
 
 [node name="atm8" type="StaticBody2D" parent="YSort"]
 position = Vector2( 1536.84, 698.387 )
@@ -1252,7 +1278,7 @@ texture = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/atm8"]
 visible = false
 position = Vector2( -0.122566, 0.0437393 )
-shape = SubResource( 24 )
+shape = SubResource( 26 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1266,7 +1292,7 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-margin_right = 403.0
+margin_right = 479.0
 margin_bottom = 189.0
 color = Color( 0, 0, 0, 0.337255 )
 __meta__ = {
@@ -1276,10 +1302,36 @@ __meta__ = {
 [node name="status" type="Label" parent="CanvasLayer"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 27 )
 text = "COLLECTED: 0
 TIME LEFT: 120.0s
 HOLDING: 0/3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="penalty_text" type="Label" parent="CanvasLayer/status"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 397.811
+margin_top = 65.3244
+margin_right = 454.811
+margin_bottom = 112.324
+custom_fonts/font = SubResource( 40 )
+text = "-30"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bonus_text" type="Label" parent="CanvasLayer/status"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 397.811
+margin_top = 65.3244
+margin_right = 454.811
+margin_bottom = 112.324
+custom_fonts/font = SubResource( 39 )
+text = "+10"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1293,7 +1345,7 @@ margin_left = -24.6072
 margin_top = -50.8774
 margin_right = 23.3928
 margin_bottom = 47.1226
-custom_fonts/font = SubResource( 26 )
+custom_fonts/font = SubResource( 28 )
 text = "3"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1304,55 +1356,72 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spawnable"]
 position = Vector2( 232, -48 )
-shape = SubResource( 27 )
+shape = SubResource( 29 )
 disabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="spawnable"]
 position = Vector2( 696, -48 )
-shape = SubResource( 28 )
+shape = SubResource( 30 )
 disabled = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="spawnable"]
 position = Vector2( 1184, 80 )
-shape = SubResource( 29 )
+shape = SubResource( 31 )
 disabled = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="spawnable"]
 position = Vector2( 1232, 752 )
-shape = SubResource( 30 )
+shape = SubResource( 32 )
 disabled = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="spawnable"]
 position = Vector2( 144, 608 )
-shape = SubResource( 31 )
+shape = SubResource( 33 )
 disabled = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="spawnable"]
 position = Vector2( 696, 416 )
-shape = SubResource( 32 )
+shape = SubResource( 34 )
 disabled = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="spawnable"]
 position = Vector2( 1248, 416 )
-shape = SubResource( 33 )
+shape = SubResource( 35 )
 disabled = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="spawnable"]
 position = Vector2( 2224, 416 )
-shape = SubResource( 34 )
+shape = SubResource( 36 )
 disabled = true
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="spawnable"]
 position = Vector2( 1248, 904 )
-shape = SubResource( 35 )
+shape = SubResource( 37 )
 disabled = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="spawnable"]
 position = Vector2( 1856, 960 )
-shape = SubResource( 36 )
+shape = SubResource( 38 )
 disabled = true
+
+[node name="karen_zones" type="Node2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="karen_zones"]
+position = Vector2( 697.593, 80.5804 )
+shape = SubResource( 41 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="karen_zones"]
+position = Vector2( 1246.43, 753.221 )
+shape = SubResource( 42 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="karen_zones"]
+position = Vector2( 146.057, 975.073 )
+shape = SubResource( 43 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="karen_zones"]
+position = Vector2( 2222.71, 428.857 )
+shape = SubResource( 44 )
 
 [node name="customers" type="Node2D" parent="."]
 
-[node name="Sprite" parent="." instance=ExtResource( 15 )]
-position = Vector2( 453.327, 97.8795 )
+[node name="in_air" type="Node2D" parent="."]
