@@ -158,7 +158,7 @@ func _process(delta):
 				listen_for_key = true
 			i+=1
 		else:
-			if Input.is_key_pressed(16777221):
+			if Input.is_key_pressed(16777221): # (enter key)
 				get_tree().change_scene("res://main_menu.tscn")
 	else:
 		get_node("/root/Node2D/CanvasLayer/countdown").set_visible(false)

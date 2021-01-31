@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="A Day in Akropolis: The Great Search"
 run/main_scene="res://main_menu.tscn"
+boot_splash/bg_color=Color( 0.145098, 0.156863, 0.156863, 1 )
 config/icon="res://assets/icon.png"
 
 [autoload]
@@ -67,4 +68,5 @@ space={
 
 [rendering]
 
+environment/default_clear_color=Color( 0.188235, 0.937255, 0.901961, 1 )
 environment/default_environment="res://default_env.tres"

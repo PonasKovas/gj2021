@@ -326,7 +326,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter"]
 frames = SubResource( 22 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter"]
@@ -342,7 +342,6 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter2"]
 frames = SubResource( 22 )
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter2"]
@@ -358,7 +357,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter3"]
 frames = SubResource( 22 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter3"]
@@ -374,7 +373,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/infocenter4"]
 frames = SubResource( 22 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/infocenter4"]
@@ -1350,6 +1349,14 @@ text = "3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/countdown"]
+show_behind_parent = true
+margin_left = -13.0
+margin_top = 4.0
+margin_right = 65.0
+margin_bottom = 97.0
+color = Color( 0, 0, 0, 0.701961 )
 
 [node name="spawnable" type="Node2D" parent="."]
 visible = false
